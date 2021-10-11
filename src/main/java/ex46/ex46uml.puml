@@ -1,0 +1,14 @@
+@startuml
+Class App
+{
+ArrayList<String> readFile
+ArrayList<String> newWords
+==
+.. Read File ..
++ readFile()
+.. Find New Words ..
++ findNewWords()
+.. How Many Times It Is Repeated ..
++ repetitionOfNewWords()
+}
+@enduml

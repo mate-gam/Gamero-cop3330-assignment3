@@ -1,0 +1,6 @@
+Website Generator
+First I will get all the inputs that are necessary
+Then I will make the first directory which will be ./website/inputtedSiteName
+Then I will add an html file under that directory
+Then according to the user I will add a javascript directory and/or a css directory
+

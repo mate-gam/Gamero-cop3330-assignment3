@@ -1,0 +1,4 @@
+The first function will be to read the file called exercise41_input that is in the
+same directory as App.java for exercise41. Then I will send all of the names into an
+array so it will be easier to sort. Finally I will write the sorted array to file
+called exercise41_output that is also in the same directory.

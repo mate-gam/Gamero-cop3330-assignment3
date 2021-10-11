@@ -1,0 +1,8 @@
+Product Search using Json file
+First I will read in the Json file and parse the file
+then adding each category to a separate array like nameArray and priceArray
+Then when the user inputs the product name it will try to find it in the nameArray
+If the product is not there it will ask the user again and again until there is a
+valid search.
+Finally if the name if found in the nameArray I will print out the description of
+that certain product.

@@ -1,0 +1,12 @@
+@startuml
+Class App
+{
+String[][] array
+==
+.. Convert JsonFile to String Array ..
++ jsonFileToStringArray()
+.. Print out the results ..
++ printStatements()
+}
+
+@enduml

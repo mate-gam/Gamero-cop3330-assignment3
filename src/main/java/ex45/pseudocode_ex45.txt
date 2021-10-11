@@ -1,0 +1,5 @@
+Word Finder
+First I will read in the file by adding each word to an array
+Then call a function that will replace the word utilize with use
+while keeping everything else
+Finally I will write the fixed array to a file in the same directory.

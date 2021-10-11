@@ -1,0 +1,7 @@
+Parsing Data File
+First I will read in the file.
+Then I will parse the array by using the commas that separate the values
+Then add the values to an according array so all of the First names will be in the
+same array. The size of the array will be pre determined from another function
+That will return the size of the array for each value.
+Finally I will use a for loop to write to the output file using table format.

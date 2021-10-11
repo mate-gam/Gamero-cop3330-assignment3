@@ -1,0 +1,6 @@
+Word Frequency Finder
+First I will read in word by word into an arraylist
+Then call a function that will find new words and then add the new
+words into another arrayList.
+Then another function will find out how many times that word is used
+Then print out a histogram with each words frequency.

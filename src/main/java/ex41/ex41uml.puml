@@ -1,0 +1,14 @@
+@startuml
+class App{
+int numberOfNames
+ArrayList<String> names
+==
+.. Read File ..
++ readFile()
+.. Sort File ..
++ sortFile()
+.. Write To Output ..
++ checkForOutPutFile()
+}
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+Class App
+{
+ArrayList<String> readFile
+ArrayList<String> writeFile
+==
+.. Read File ..
++ readFile()
+.. Corrects The File ..
++ changeFile()
+.. Create The File For Output ..
++ readFile()
+.. Writes The Corrected File ..
++ writeFile()
+.. Checks For The Word utilize ..
++ containsUtilize()
+}
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+Class App
+{
+String siteName, siteAuthor, siteJS, siteCSS
+==
+.. Get Inputs From User ..
++ getInputs()
+.. Make Directory ..
++ makeDirectory()
++ -> addFiles()
+Adds files depending on user Inputs
+}
+
+
+@enduml
