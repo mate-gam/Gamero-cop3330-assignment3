@@ -40,7 +40,7 @@ public class App
             bool = f.mkdirs();
 
             // print
-            System.out.println("Directory created? "+bool);
+            System.out.println("Created ./website/"+this.siteName);
 
         } catch(Exception e) {
             // if any error occurs
@@ -58,7 +58,7 @@ public class App
             File myObj = new File(path + "/index.html");
             // creates file if not created already
             if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+                System.out.println("Created ./website/" + this.siteName + "/index.html");
             } else {
                 System.out.println("File already exists.");
             }
@@ -79,7 +79,7 @@ public class App
                 bool = f.mkdirs();
 
                 // print
-                System.out.print("Directory created? "+bool);
+                System.out.print("Created ./website/"+ this.siteName + "/js/");
 
             } catch(Exception e) {
                 // if any error occurs
@@ -98,7 +98,7 @@ public class App
                 bool = f.mkdirs();
 
                 // print
-                System.out.print("Directory created? "+bool);
+                System.out.print("Created ./website/"+ this.siteName + "/css/");
 
             } catch(Exception e) {
                 // if any error occurs

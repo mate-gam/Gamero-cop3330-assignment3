@@ -7,6 +7,8 @@ package ex44;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
+
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -14,27 +16,39 @@ import java.util.Scanner;
 
 public class App
 {
-    String[][] array = new String[3][3]; //Array for Json inputs
-    void jsonFileToStringArray()throws IOException, ParseException
+    String[][] jsonFileToStringArray(String[][] array)throws IOException, ParseException
     {
+        App app = new App();
+        JSONArray ja = app.getJSONArray(); // json array of the products
+        array = app.addValues(array, ja);
+        return array;
+    }
+
+    JSONArray getJSONArray() throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         JSONObject a = (JSONObject) parser.parse // parses the json file
                 (new FileReader("src/main/java/ex44/exercise_input.json"));
 
         JSONArray ja = (JSONArray) a.get("products"); // json array of the products
+        return ja;
+    }
+
+    String[][] addValues (String[][] array, JSONArray ja)
+    {
         int i = 0;
         for (Object c : ja)
         {
             int j = 0;
             JSONObject prod = (JSONObject) c; // Creates new object for each element in array
-            this.array[i][j++] = (String) prod.get("name"); // Adds the Value of the key into 2d array
-            this.array[i][j++] = String.valueOf(prod.get("price"));
-            this.array[i][j] = String.valueOf(prod.get("quantity"));
+            array[i][j++] = (String) prod.get("name"); // Adds the Value of the key into 2d array
+            array[i][j++] = String.valueOf(prod.get("price"));
+            array[i][j] = String.valueOf(prod.get("quantity"));
             i++;
         }
+        return array;
     }
 
-    void printStatements()
+    void printStatements(String[][] array)
     {
         Scanner sc = new Scanner(System.in);
         boolean flag = true;
@@ -63,7 +77,8 @@ public class App
 
     public static void main(String[] args) throws IOException, ParseException {
         App app = new App();
-        app.jsonFileToStringArray();
-        app.printStatements();
+        String[][] array = new String[3][3];
+        array = app.jsonFileToStringArray(array);
+        app.printStatements(array);
     }
 }

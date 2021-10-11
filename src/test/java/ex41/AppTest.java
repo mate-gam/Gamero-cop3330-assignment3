@@ -4,8 +4,6 @@
  */
 package ex41;
 
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,9 +11,11 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Before
-    public ArrayList<String> addInputToArray()
+    @Test
+    void readFile()
     {
+        App app = new App();
+        ArrayList<String> readFileArray = new ArrayList<>();
         ArrayList<String> inputFile = new ArrayList<>();
         inputFile.add("Ling, Mai");
         inputFile.add("Johnson, Jim");
@@ -24,11 +24,21 @@ class AppTest {
         inputFile.add("Jones, Aaron");
         inputFile.add("Swift, Geoffrey");
         inputFile.add("Xiong, Fong");
-        return inputFile;
+        assertEquals(inputFile, app.readFile(readFileArray));
     }
-    @Before
-    public ArrayList<String> addSortedToArray()
+
+    @Test
+    void sortArray()
     {
+        App app = new App();
+        ArrayList<String> inputFile = new ArrayList<>();
+        inputFile.add("Ling, Mai");
+        inputFile.add("Johnson, Jim");
+        inputFile.add("Zarnecki, Sabrina");
+        inputFile.add("Jones, Chris");
+        inputFile.add("Jones, Aaron");
+        inputFile.add("Swift, Geoffrey");
+        inputFile.add("Xiong, Fong");
         ArrayList<String> outputFile = new ArrayList<>();
         outputFile.add("Johnson, Jim");
         outputFile.add("Jones, Aaron");
@@ -37,24 +47,7 @@ class AppTest {
         outputFile.add("Swift, Geoffrey");
         outputFile.add("Xiong, Fong");
         outputFile.add("Zarnecki, Sabrina");
-        return outputFile;
-    }
-    @Test
-    void readFile()
-    {
-        App app = new App();
-        ArrayList<String> readFileArray = new ArrayList<>();
-        ArrayList<String> inputFile = addInputToArray();
-        assertEquals(inputFile, app.readFile(readFileArray));
-    }
-
-    @Test
-    void sortArray()
-    {
-        App app = new App();
-        ArrayList<String> sortedFileArray = addInputToArray();
-        ArrayList<String> outputFile = addSortedToArray();
         app.numberOfNames = 7;
-        assertEquals(outputFile, app.sortArray(sortedFileArray, app.numberOfNames));
+        assertEquals(outputFile, app.sortArray(inputFile, app.numberOfNames));
     }
 }
